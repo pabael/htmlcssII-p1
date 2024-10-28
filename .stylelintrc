@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
+  
+  "rules": {
+
+    "color-hex-length": "short",
+    "color-no-invalid-hex": true,
+ 
+    "no-duplicate-selectors": true,
+ 
+    "selector-class-pattern": "^[a-z][a-z0-9-]*$",
+    "selector-no-qualifying-type": [true, { "ignore": ["attribute"] }],
+ 
+    "scss/no-global-function-names": null,
+
+    "declaration-block-no-duplicate-properties": true,
+    
+    "block-no-empty": true,
+    "comment-no-empty": true,
+    "property-no-unknown": true
+  }
+}

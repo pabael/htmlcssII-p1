@@ -1,0 +1,17 @@
+@function aspect-ratio($width, $height) {
+  @return ($height / $width) * 100%;
+}
+
+@function gradient-border($color1, $color2) {
+  @return linear-gradient(to right, $color1, $color2);
+}
+
+@function contrast-color($color) {
+  $lightness: lightness($color);
+
+  @if $lightness > 50 {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}

@@ -1,0 +1,19 @@
+.virgen-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-block: 40px;
+  padding-inline: 80px;
+  
+  color: contrast-color($accent-soft);
+  
+  background-color: $accent-soft;
+
+  h3 {
+    margin-bottom: 30px;
+    font-family: $font-title;
+    font-size: 2.5rem;
+  }
+}
