@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const inicioSection = document.querySelector('#main');
   let lastScrollTop = 0;
 
-
   window.addEventListener("scroll", function () {
     let scrollTop = window.scrollY;
-    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+    navbar.classList.remove('hidden');
+    navbarHeight = document.querySelector('.navbar').offsetHeight;
+    navbar.classList.add('hidden');
 
     const inicioTop = inicioSection.offsetTop;
     const inicioHeight = inicioSection.clientHeight;
@@ -64,15 +65,18 @@ document.addEventListener("DOMContentLoaded", function () {
   changeLinkState();
 
   //Menu start before the section
-
   function smoothScroll (e){
     e.preventDefault();
     const targetId = this.getAttribute('href');
     const targetElement = document.querySelector(targetId);
+
     let navbarHeight = 0;
 
     if (window.innerWidth >= 992) {
-      navbarHeight = document.querySelector('.navbar').offsetHeight;
+      let navbar = document.querySelector('.navbar');
+      navbar.classList.remove('hidden');
+      navbarHeight = navbar.offsetHeight;
+      navbar.classList.add('hidden');
     } else {
       navbarHeight = document.querySelector('.navbar button').offsetHeight;
       const navbar = document.getElementById("navbar");
@@ -91,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const sectionsBtn = document.querySelectorAll(".card-body button");
-  console.log(sectionsBtn);
   sectionsBtn.forEach(btn => {
     btn.addEventListener('click', smoothScroll);
   });
