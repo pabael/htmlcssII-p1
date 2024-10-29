@@ -146,6 +146,7 @@ body {
       overflow: hidden;
       color: contrast-color($accent-soft);
 
+      border: none;
       background-color: $accent-soft;
 
       .card-body {
@@ -155,10 +156,10 @@ body {
         .btn {
           width: fit-content;
           margin-top: auto;
+          
           color: contrast-color($highlight);
 
           background-color: $highlight;
-          border: none;
         }
       }
 
@@ -189,6 +190,7 @@ body {
 
       .btn:hover {
         color: contrast-color(lighten($highlight, 10%));
+
         background-color: lighten($highlight, 10%);
       }
     }
