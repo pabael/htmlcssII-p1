@@ -64,28 +64,38 @@ document.addEventListener("DOMContentLoaded", function () {
   changeLinkState();
 
   //Menu start before the section
-  navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      let navbarHeight = 0;
 
-      if (window.innerWidth >= 992) {
-        navbarHeight = document.querySelector('.navbar').offsetHeight;
-      } else {
-        navbarHeight = document.querySelector('.navbar button').offsetHeight;
-        const navbar = document.getElementById("navbar");
-        navbar.classList.toggle("show");
-      }
-      const targetPosition = targetElement.offsetTop - navbarHeight;
+  function smoothScroll (e){
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    let navbarHeight = 0;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+    if (window.innerWidth >= 992) {
+      navbarHeight = document.querySelector('.navbar').offsetHeight;
+    } else {
+      navbarHeight = document.querySelector('.navbar button').offsetHeight;
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("show");
+    }
+    const targetPosition = targetElement.offsetTop - navbarHeight;
+
+    window.scrollTo({
+      top: targetPosition,
+      behavior: 'smooth'
     });
+  }
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', smoothScroll);
   });
+
+  const sectionsBtn = document.querySelectorAll(".btn .btn-primary");
+
+  sectionsBtn.forEach(btn => {
+    btn.addEventListener('click', smoothScroll);
+  });
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
