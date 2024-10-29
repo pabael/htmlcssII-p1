@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener('click', smoothScroll);
   });
 
-  const sectionsBtn = document.querySelectorAll(".btn .btn-primary");
-
+  const sectionsBtn = document.querySelectorAll(".card-body button");
+  console.log(sectionsBtn);
   sectionsBtn.forEach(btn => {
     btn.addEventListener('click', smoothScroll);
   });
