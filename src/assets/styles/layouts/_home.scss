@@ -150,14 +150,14 @@ body {
 
         button {
           width: fit-content;
-          margin-top: auto;
           padding: 7px;
+          margin-top: auto;
           
           color: contrast-color($highlight);
 
+          background-color: $highlight;
           border: none;
           border-radius: 10px;
-          background-color: $highlight;
         }
       }
 
